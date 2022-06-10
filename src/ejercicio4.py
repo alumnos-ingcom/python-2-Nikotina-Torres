@@ -14,24 +14,25 @@
 """
 
 def fibonacci(numero):
-    anterior = numero -1
-    anterior2 = numero -2
-    assert numero >= 0, "El numero debe ser 0 o mayor"
-    if numero == 0:
-        return numero + 1
-    elif numero == 1:
-        return numero + anterior
+    a=1
+    b=1
+    c=3
+    if numero == 0 or numero == 1:
+        return a
     else:
-        resultado = numero  anterior
-        
-
+        for _ in range(numero):
+            total=a+b
+            b=a
+            a=total
+            c+=1
+        return total
 
 def principal():
     """
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    numero = 1
+    numero = 13
     print(fibonacci(numero))
 
 
