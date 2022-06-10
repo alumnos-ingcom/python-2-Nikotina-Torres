@@ -12,7 +12,18 @@
  Implementar una función que permita obtener el n-esimo termino de la sucesión de Fibonacci.
  Siendo este número un entero positivo mayor a 2.
 """
-# Reemplazar por las funciones del ejercicio
+
+def fibonacci(numero):
+    anterior = numero -1
+    anterior2 = numero -2
+    assert numero >= 0, "El numero debe ser 0 o mayor"
+    if numero == 0:
+        return numero + 1
+    elif numero == 1:
+        return numero + anterior
+    else:
+        resultado = numero  anterior
+        
 
 
 def principal():
@@ -20,7 +31,8 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    pass
+    numero = 1
+    print(fibonacci(numero))
 
 
 if __name__ == "__main__":
