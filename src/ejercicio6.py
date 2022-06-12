@@ -33,16 +33,30 @@ def cifrar(palabra, ajuste):
         codificacion += c
     return codificacion
 
+def decifrar(palabra, ajuste):
+    lista = []
+    for i in palabra:
+        lista.append(i)
+    for l in range(len(lista)):
+        caracter = lista[l]
+        caracter = chr(ord(caracter))
+        lista[l] = caracter
+    codificacion = ""
+    for c in lista:
+        codificacion += c
+    return codificacion
 
 def principal():
     """
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    contraseña = "zZ09"
-    ajuste = 2
+    contraseña = "bav10932"
+    ajuste = 1
     cifrado= cifrar(contraseña, ajuste)
     print(f"Codificado: {cifrado}")
+    decifrado= decifrar(contraseña, ajuste)
+    print(f"Codificado: {decifrado}")
 
 
 if __name__ == "__main__":
