@@ -19,14 +19,18 @@ def cifrar(palabra, ajuste):
         lista.append(i)
     for l in range(len(lista)):
         caracter = lista[l]
-        if ord(caracter) + 1 == 123: # Si es z
-            caracter = chr(96+ajuste)
-        elif ord(caracter) + 1 == 58: # Si es 9
-            caracter = chr(47+ajuste)
-        elif ord(caracter) + 1 == 91: # Si es Z
-            caracter = chr(64+ajuste)
-        else: #Si es cualquier otro caracter
+        if ord(caracter) > 47 and ord(caracter) <= 56: #Si es 0-8
             caracter = chr(ord(caracter) + ajuste)
+        elif ord(caracter) == 57: #Si es 9
+            caracter = chr(47+ajuste)
+        elif ord(caracter) > 64 and ord(caracter) <= 89: #Si es A-Y
+            caracter = chr(ord(caracter) + ajuste)
+        elif ord(caracter) == 90: #Si es Z
+            caracter = chr(64+ajuste)
+        elif ord(caracter) > 96 and ord(caracter) <= 121: #Si es a-y
+            caracter = chr(ord(caracter)+ ajuste)
+        elif ord(caracter) == 122: #Si es z
+            caracter = chr(96+ajuste)
         lista[l] = caracter
     codificacion = ""
     for c in lista:
@@ -39,7 +43,18 @@ def decifrar(palabra, ajuste):
         lista.append(i)
     for l in range(len(lista)):
         caracter = lista[l]
-        caracter = chr(ord(caracter))
+        if ord(caracter) > 48 and ord(caracter) <= 57: #Si es 1-9
+            caracter = chr(ord(caracter) - ajuste)
+        elif ord(caracter) == 48: #Si es 0
+            caracter = chr(58-ajuste)
+        elif ord(caracter) > 65 and ord(caracter) <= 90: #Si es B-Z
+            caracter = chr(ord(caracter) - ajuste)
+        elif ord(caracter) == 65: #Si es A
+            caracter = chr(91-ajuste)
+        elif ord(caracter) > 97 and ord(caracter) <= 122: #Si es b-z
+            caracter = chr(ord(caracter)- ajuste)
+        elif ord(caracter) == 97: #Si es a
+            caracter = chr(123-ajuste)
         lista[l] = caracter
     codificacion = ""
     for c in lista:
@@ -51,12 +66,12 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    contraseña = "bav10932"
+    contraseña = "az90AZ"
     ajuste = 1
     cifrado= cifrar(contraseña, ajuste)
     print(f"Codificado: {cifrado}")
-    decifrado= decifrar(contraseña, ajuste)
-    print(f"Codificado: {decifrado}")
+    decifrado= decifrar(cifrado, ajuste)
+    print(f"Decodificado: {decifrado}")
 
 
 if __name__ == "__main__":
