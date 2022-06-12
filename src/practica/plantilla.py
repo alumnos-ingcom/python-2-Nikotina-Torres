@@ -1,5 +1,5 @@
 ################
-# Nombre - @usuario_github
+# Nombre - @Nikotina-Torres
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
