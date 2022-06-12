@@ -15,8 +15,7 @@
 
 def fibonacci(numero):
     a=1
-    b=1
-    c=3
+    b=0
     if numero == 0 or numero == 1:
         return a
     else:
@@ -24,7 +23,6 @@ def fibonacci(numero):
             total=a+b
             b=a
             a=total
-            c+=1
         return total
 
 def principal():
@@ -32,7 +30,7 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    numero = 13
+    numero = 5
     print(fibonacci(numero))
 
 
